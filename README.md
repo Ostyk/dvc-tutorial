@@ -49,7 +49,7 @@ rm -f data.zip
 
 
 
-**Step 5:** Initalize DVC
+**Step 5 (optional- use if DVC not initialized):** Initalize DVC
 
 ```
 dvc init
@@ -67,8 +67,14 @@ You can also add metrics, log files, plots etc.
 dvc add model_epoch_2.pth
 ```
 
+**Step 7:** Commit current state:
+```
+git add data.dvc model_epoch_2.pth.dvc .gitignore
+git commit -m "First model, trained with 1000 images"
+git tag -a "v1.0" -m "model v1.0, 1000 images"
+```
 
-**Step 7:** Train another 2nd Model version
+**Step 8:** Train another 2nd Model version
 Simply train another model using additional data:
 
 #### Get addtionals data:
@@ -85,6 +91,13 @@ rm -f new-labels.zip
     dvc add data
     dvc add model_epoch_2.pth
     ```
+
+### Commit second version
+```
+git add data.dvc model_epoch_2.pth.dvc
+git commit -m "Second model, trained with 2000 images"
+git tag -a "v2.0" -m "model v2.0, 2000 images"
+```
 
 **Step 7:**
 Switching between workspaces:

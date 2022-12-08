@@ -1,5 +1,6 @@
 # dvc-tutorial
 
+This tutorial is based on https://dvc.org/doc/use-cases/versioning-data-and-models/tutorial  with the source code for training models ported to Pytorch.
 
 ## Install
 
@@ -46,8 +47,60 @@ rm -f data.zip
 
 ```jupyter notebook``` and train with  `CatDogClassifier.ipynb`
 
-**Step 5:**
+**Step 5:** Add data and model to dvc
+
+```
+dvc add data
+```
+
+You can also add metrics, log files, plots etc.
+```
+dvc add model.h5
+```
+
+**Step 5:** Version current state
+
+
+
+
+**Step 6:** Train another 2nd Model version
+Simply train another model using additional data:
+
+#### Get addtionals data:
+```
+dvc get https://github.com/iterative/dataset-registry \
+          tutorials/versioning/new-labels.zip
+unzip -q new-labels.zip
+rm -f new-labels.zip
+```
+#### Add data to DVC, train model and add new model:
+
+1. Train model using jupyter notebook
+2.  ```
+    dvc add data
+    dvc add model.h5
+    ```
+
+**Step 7:**
+Switching between workspaces:
+### Full:
+
+```
+git checkout v1.0
+dvc checkout
+```
+
+### On the other hand, if we want to keep the current code, but go back to the previous dataset version, we can target specific data, like this:
+
+```
+git checkout v1.0 data.dvc
+dvc checkout data.dvc
+```
+
+
+
 # Useful Links:
+- More in depth tutorial: https://dvc.org/doc/use-cases/versioning-data-and-models/tutorial
 - Slideshow (DAC.Digital employees only for now): https://docs.google.com/presentation/d/1qS6ouyFTiBdr0a0zKrpWW8S1baJek7gweYJYBHjnuo4/edit?usp=sharing
 - No code explanation: https://www.youtube.com/watch?v=UbL7VUpv1Bs
 - data registry: https://github.com/iterative/dataset-registry

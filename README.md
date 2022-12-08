@@ -38,12 +38,13 @@ pip install -r requirements.txt
 ```
 **Step 3:** Get data from existing data registry
 ```
-dvc get https://github.com/iterative/dataset-registry \
-          tutorials/versioning/new-labels.zip
-unzip -q new-labels.zip
-rm -f new-labels.zip
+dvc get https://github.com/iterative/dataset-registry tutorials/versioning/data.zip
+unzip -q data.zip
+rm -f data.zip
 ```
-**Step 4:**
+**Step 4:** Train model
+
+```jupyter notebook``` and train with  `CatDogClassifier.ipynb`
 
 **Step 5:**
 # Useful Links:

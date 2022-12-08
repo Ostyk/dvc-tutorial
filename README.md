@@ -30,7 +30,6 @@ dvc get https://github.com/iterative/dataset-registry \
 unzip -q new-labels.zip
 rm -f new-labels.zip
 ```
-
 **Step 4:**
 
 **Step 5:**

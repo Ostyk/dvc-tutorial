@@ -55,7 +55,7 @@ dvc add data
 
 You can also add metrics, log files, plots etc.
 ```
-dvc add model.h5
+dvc add model_epoch_2.pth
 ```
 
 **Step 5:** Version current state
@@ -78,7 +78,7 @@ rm -f new-labels.zip
 1. Train model using jupyter notebook
 2.  ```
     dvc add data
-    dvc add model.h5
+    dvc add model_epoch_2.pth
     ```
 
 **Step 7:**

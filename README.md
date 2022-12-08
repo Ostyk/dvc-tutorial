@@ -47,7 +47,16 @@ rm -f data.zip
 
 ```jupyter notebook``` and train with  `CatDogClassifier.ipynb`
 
-**Step 5:** Add data and model to dvc
+
+
+**Step 5:** Initalize DVC
+
+```
+dvc init
+git commit -m "Initialize DVC"
+```
+
+**Step 6:** Add data and model to dvc
 
 ```
 dvc add data
@@ -58,12 +67,8 @@ You can also add metrics, log files, plots etc.
 dvc add model_epoch_2.pth
 ```
 
-**Step 5:** Version current state
 
-
-
-
-**Step 6:** Train another 2nd Model version
+**Step 7:** Train another 2nd Model version
 Simply train another model using additional data:
 
 #### Get addtionals data:

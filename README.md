@@ -21,6 +21,19 @@ This installs dvc using pip
 ```
 python3 -m venv env
 source env/bin/activate
+pip3 install --upgrade pip
+```
+
+Install packages that aren't the same across platforms
+
+```
+pip3 install dvc
+pip3 install torch torchvision torchaudio
+```
+
+Install the rest
+
+```
 pip install -r requirements.txt
 ```
 **Step 3:** Get data from existing data registry

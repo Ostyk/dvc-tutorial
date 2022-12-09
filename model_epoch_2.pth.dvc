@@ -1,0 +1,4 @@
+outs:
+- md5: 1b8b0db95ad9748b7e65773c45d9712c
+  size: 94359437
+  path: model_epoch_2.pth

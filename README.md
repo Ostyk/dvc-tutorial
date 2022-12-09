@@ -26,7 +26,10 @@ pip3 install --upgrade pip
 ```
 
 Install packages that aren't the same across platforms
+- DVC: https://dvc.org/doc/install
+- Pytorch: https://pytorch.org/get-started/locally/
 
+Below is a config for Python3.8, CUDA 11.7 running on ubuntu 20.04
 ```
 pip3 install dvc
 pip3 install torch torchvision torchaudio
